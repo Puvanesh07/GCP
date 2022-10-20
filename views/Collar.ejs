@@ -1,0 +1,177 @@
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+  
+</script>
+<% console.log(gltfsrc) %>
+<% console.log(usdzsrc) %>
+
+<model-viewer src=<%= gltfsrc%> ios-src=<%= usdzsrc%> 
+  alt="A 3D model" ar ar-modes="webxr scene-viewer quick-look" environment-image="neutral" auto-rotate camera-controls>
+</model-viewer>
+
+<style>
+    model-viewer {
+        height: 100%;
+        width: 100%;
+        margin: 0 auto;
+
+    }
+</style>
+
+<div id="container">
+
+	<div class="copy-text" onclick="copyCode()">
+       
+		&lt;iframe src="https://interaktive1.el.r.appspot.com/view?ApiKey=55a0024a2f2fa83c8d52ef3b5565af4db11d0ffe269bbc92c3265122&ProjectName=DogAnimation&ModelNumber=1" width="600" height="600" webkitallowfullscreen allow='camera; gyroscope; accelerometer; magnetometer; fullscreen;' &gt;&lt;/iframe&gt;
+
+		<button><i class="fa fa-clone"></i></button>
+
+	</div>
+
+	<div id="code">
+		<p> Code Copied Succesfully</p>
+	</div>
+
+</div>
+
+<div id="view1">
+	<button id=view onclick="clip()">View Embed Code</button>
+</div>
+
+<script>
+	
+</script>
+
+
+<script>
+
+    function copyCode() {
+	var range = document.createRange();
+	range.selectNode(document.querySelector(".copy-text"));
+	window.getSelection().addRange(range);
+	document.execCommand("copy");
+	var x = document.getElementById("code");
+	if (x.style.display === "none") {
+		x.style.display = "block";
+	} else {
+		x.style.display = "none";
+	}
+}
+var x = document.getElementById("code");
+if (x.style.display === "none") {
+	x.style.display = "block";
+} else {
+	x.style.display = "none";
+}
+
+document.getElementById("container").style.display = "none";
+
+function clip() {
+	document.getElementById("container").style.display = "block";
+	document.getElementById("view").style.display = "none";
+}
+</script>
+
+<style>
+
+
+body {
+	font-family: "Roboto", sans-serif;
+	background: #f0f2f7;
+}
+#view {
+	padding: 10px;
+	font-size: 18px;
+	color: #111;
+	background: #5784f5;
+	color: #fff;
+	font-size: 18px;
+	border: none;
+	outline: none;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+
+#container {
+	position: absolute;
+	top: 90%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+#view1 {
+	position: absolute;
+	top: 80%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+#code {
+	padding: 10px;
+	font-size: 18px;
+	color: #111;
+	font-size: 18px;
+	left: 50%;
+}
+
+.copy-text {
+	
+	padding: 10px;
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	display: flex;
+}
+.copy-text input.text {
+	padding: 10px;
+	font-size: 18px;
+	color: #555;
+	border: none;
+	outline: none;
+    display:flex;
+}
+.copy-text button {
+	padding: 5px;
+	background: #5784f5;
+	color: #fff;
+	font-size: 16px;
+	border: none;
+	outline: none;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.copy-text button:active {
+	background: #809ce2;
+}
+.copy-text button:before {
+	content: "copy";
+	position: absolute;
+	top: -45px;
+	right: 0px;
+	background: #5c81dc;
+	padding: 8px 10px;
+	border-radius: 20px;
+	font-size: 15px;
+	display: none;
+}
+.copy-text button:after {
+	content: "";
+	position: absolute;
+	top: -45px;
+	right: 0px;
+	background: #5c81dc;
+	padding: 8px 10px;
+	border-radius: 20px;
+	font-size: 15px;
+	display: none;
+}
+
+.copy-text.active button:before #copy-text.active button:after {
+	display: block;
+}
+
+</style>
+
+
+
+
+

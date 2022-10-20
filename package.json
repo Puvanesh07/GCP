@@ -1,0 +1,33 @@
+{
+  "name": "interaktiveapiexpress",
+  "version": "1.0.0",
+  "description": "Kick off",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Farhath Naseem",
+  "license": "ISC",
+  "engine": {
+    "node": "v14.17.1",
+    "npm": "6.14.13"
+  },
+  "dependencies": {
+    "@google-cloud/storage": "^6.5.2",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "font-awesome": "^4.7.0",
+    "lodash": "^4.0.1",
+    "mongoose": "^5.12.14",
+    "nodemon": "^2.0.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Puvanesh07/Mongodb_conn.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Puvanesh07/Mongodb_conn/issues"
+  },
+  "homepage": "https://github.com/Puvanesh07/Mongodb_conn#readme"
+}

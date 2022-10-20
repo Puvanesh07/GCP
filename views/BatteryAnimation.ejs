@@ -1,0 +1,217 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+<% console.log(gltfsrc) %>
+<% console.log(usdzsrc) %>
+
+
+
+<model-viewer id="viewer" src=<%= gltfsrc%> ios-src=<%= usdzsrc%> 
+	ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="1" autoplay >
+  <button id="Hotspot1" slot="hotspot-1" data-position="-1.4374818575846324m 3.5715729452707405m 0.015923475407831122m" data-normal="0m -1.3435883843274957e-7m 0.999999999999991m" data-visibility-attribute="visible">
+	<div class="HotspotAnnotation">1</div>
+</button><button id="Hotspot2" slot="hotspot-2" data-position="1.476218865009623m 3.5290290633908086m 0.01592346969168457m" data-normal="0m -1.3435883843274957e-7m 0.999999999999991m" data-visibility-attribute="visible">
+	<div class="HotspotAnnotation">2</div>
+</button><button id="Hotspot3" slot="hotspot-3" data-position="-1.563581563592286m 0.5144438380507124m 0.015923064655515337m" data-normal="0m -1.3435883843274957e-7m 0.999999999999991m" data-visibility-attribute="visible">
+	<div class="HotspotAnnotation">3</div>
+</button><button id="Hotspot4" slot="hotspot-4" data-position="1.3315703903069827m 0.4466558369380118m 0.015923055547600467m" data-normal="0m -1.3435883843274957e-7m 0.999999999999991m" data-visibility-attribute="visible">
+	<div class="HotspotAnnotation">4</div>
+</button>
+
+</model-viewer>
+
+<style>
+    model-viewer {
+        height: 80%;
+        width: 100%;
+        margin: 0 auto;
+
+    }
+</style> 
+
+
+<script>
+    function buttonClicked1(){
+  const modelViewer = document.querySelector('#viewer');
+  modelViewer.animationName='Layer1';
+}
+function buttonClicked2(){
+  const modelViewer = document.querySelector('#viewer');
+  modelViewer.animationName='Layer2';
+}
+function buttonClicked3(){
+  const modelViewer = document.querySelector('#viewer');
+  modelViewer.animationName='Layer7';
+}
+function buttonClicked4(){
+  const modelViewer = document.querySelector('#viewer');
+  modelViewer.animationName='Spin.002';
+}
+
+window.onload=function(){
+  var btn1 = document.getElementById("Hotspot1");
+  btn1.addEventListener("click", buttonClicked1, true);
+  var btn2 = document.getElementById("Hotspot2");
+  btn2.addEventListener("click", buttonClicked2, true);
+   var btn3 = document.getElementById("Hotspot3");
+  btn3.addEventListener("click", buttonClicked3, true);
+   var btn4 = document.getElementById("Hotspot4");
+  btn4.addEventListener("click", buttonClicked4, true);
+}
+  </script>
+
+
+<div id="container">
+
+	<div class="copy-text" onclick="copyCode()">
+		
+     
+		&lt;iframe src= "https://interaktive1.el.r.appspot.com/view?ApiKey=jCzLzdoJR3&ProjectName=BatteryAnimation&ModelNumber=2" width="600" height="600" webkitallowfullscreen allow='camera; gyroscope; accelerometer; magnetometer; fullscreen;' &gt;&lt;/iframe&gt;
+	
+		<button><i class="fa fa-clone"></i></button>
+
+	</div>
+
+	<div id="code">
+		<p> Code Copied Succesfully</p>
+	</div>
+
+</div>
+
+<div id="view1">
+	<button id=view onclick="clip()">View Embed Code</button>
+</div>
+
+
+<script>
+    function copyCode() {
+	var range = document.createRange();
+	range.selectNode(document.querySelector(".copy-text"));
+	window.getSelection().addRange(range);
+	document.execCommand("copy");
+	var x = document.getElementById("code");
+	if (x.style.display === "none") {
+		x.style.display = "block";
+	} else {
+		x.style.display = "none";
+	}
+}
+var x = document.getElementById("code");
+if (x.style.display === "none") {
+	x.style.display = "block";
+} else {
+	x.style.display = "none";
+}
+
+document.getElementById("container").style.display = "none";
+
+function clip() {
+	document.getElementById("container").style.display = "block";
+	document.getElementById("view").style.display = "none";
+}
+</script>
+
+
+
+<style>
+
+
+body {
+	font-family: "Roboto", sans-serif;
+	background: #f0f2f7;
+}
+#view {
+	padding: 10px;
+	font-size: 18px;
+	color: #111;
+	background: #5784f5;
+	color: #fff;
+	font-size: 18px;
+	border: none;
+	outline: none;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+
+#container {
+	position: absolute;
+	top: 90%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+#view1 {
+	position: absolute;
+	top: 80%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+#code {
+	padding: 10px;
+	font-size: 18px;
+	color: #111;
+	font-size: 18px;
+	left: 50%;
+}
+
+.copy-text {
+	
+	padding: 10px;
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	display: flex;
+}
+.copy-text input.text {
+	padding: 10px;
+	font-size: 18px;
+	color: #555;
+	border: none;
+	outline: none;
+    display:flex;
+}
+.copy-text button {
+	padding: 5px;
+	background: #5784f5;
+	color: #fff;
+	font-size: 16px;
+	border: none;
+	outline: none;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.copy-text button:active {
+	background: #809ce2;
+}
+.copy-text button:before {
+	content: "copy";
+	position: absolute;
+	top: -45px;
+	right: 0px;
+	background: #5c81dc;
+	padding: 8px 10px;
+	border-radius: 20px;
+	font-size: 15px;
+	display: none;
+}
+.copy-text button:after {
+	content: "";
+	position: absolute;
+	top: -45px;
+	right: 0px;
+	background: #5c81dc;
+	padding: 8px 10px;
+	border-radius: 20px;
+	font-size: 15px;
+	display: none;
+}
+
+.copy-text.active button:before #copy-text.active button:after {
+	display: block;
+}
+
+</style>
+
+
