@@ -188,5 +188,5 @@ let port = process.env.PORT;
 if (port == null || port == "") {
   port = 5001;
 }
-//app.listen(port, ()=> console.log("Listening on port from gcloud" +port + __dirname))
-https.createServer({    key: fs.readFileSync('./key.pem'),    cert: fs.readFileSync('./cert.pem'),    passphrase: 'test'}, app).listen(port);
+app.listen(port, ()=> console.log("Listening on port from gcloud" +port + __dirname))
+//https.createServer({    key: fs.readFileSync('./key.pem'),    cert: fs.readFileSync('./cert.pem'),    passphrase: 'test'}, app).listen(port);
